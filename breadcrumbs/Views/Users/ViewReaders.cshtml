@@ -1,0 +1,82 @@
+﻿@model IEnumerable<breadcrumbs.Models.Users>
+
+@{
+    ViewBag.Title = "View Readers";
+}
+<ul class="breadcrumb">
+    You are here:
+
+    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    <li>@Html.ActionLink("User Rights Management", "Index", "Users")</li>
+    <li>@Html.ActionLink("View Readers", "ViewReaders", "Users")</li>
+</ul>
+<h2>User List</h2>
+<div class="col-md-2">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("View all Readers", "ViewReaders", "Users")</li>
+        <li>@Html.ActionLink("View all Editors", "ViewEditors", "Users")</li>
+        <li>@Html.ActionLink("View all Admins", "ViewAdmins", "Users")</li>
+        <li>@Html.ActionLink("View all Exporters", "ViewExporters", "Users")</li>
+    </ul>
+</div>
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.UserCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reader)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Editor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Admin)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Exporter)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            if(item.Reader)
+            { 
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Reader)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Editor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Admin)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Exporter)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                </td>
+            </tr>
+            }
+        }
+
+    </table>
+</div>

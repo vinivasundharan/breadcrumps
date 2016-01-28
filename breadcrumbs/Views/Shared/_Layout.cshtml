@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - TeDaLS</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="icon" href="@Url.Content("~/content/favicon.ico")" />
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+</head>
+
+<body id="home">
+
+    <div class="navbar navbar-inverse navbar-fixed-top">
+
+        <div class="container">
+            @*<div>
+                    <a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                        <img src="~/Content/index.jpg" title="title" alt="additional title" height="50" width="100" />
+                    </a>
+                </div>*@
+            <div class="navbar-header">
+                @*  <img id="img_logo" alt="Logo" src="@Url.Content("~/Content/index.jpg")" height="50" width="100" />*@
+                @*<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>*@
+                @*<a href="@Url.Action("Index", "Home")" class="navbar-brand">
+                        <img src="~/Content/index.jpg" title="title" alt="additional title" height="50" width="100" />
+                    </a>*@
+                @Html.ActionLink("TeDaLS", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav nav-tabs">
+
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("System Family", "SystemFamily", "Home")</li>
+                    <li>@Html.ActionLink("Technical Characteristics", "TechnicalCharacteristics", "Home")</li>
+                    <li>@Html.ActionLink("Calculations", "Calculation", "Home")</li>
+                    <li>@Html.ActionLink("Views", "Views", "Home")</li>
+                    <li>@Html.ActionLink("Revision history", "RevisionHistory", "Home")</li>
+                    <li>@Html.ActionLink("Import SAP Characteristics", "ImportSAP", "Home")</li>
+                    <li>@Html.ActionLink("User rights Management", "Index", "Users")</li>
+                </ul>
+               
+            </div>
+            <p class="nav navbar-text navbar-right">Hello, @User.Identity.Name!</p>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy;Bosch Rexroth: TeDaLS</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

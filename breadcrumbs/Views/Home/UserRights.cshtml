@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "User Rights Management";
+}
+<ul class="breadcrumb">
+    You are here: 
+
+    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+    <li>@Html.ActionLink("User Rights Management", "UserRights", "Home")</li>
+</ul>
+<h2>User Rights management</h2>
+<div class="col-md-2">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("View all Readers", "", "")</li>
+        <li>@Html.ActionLink("View all Editors", "", "")</li>
+        <li>@Html.ActionLink("View all Admins", "", "")</li>
+        <li>@Html.ActionLink("View all Exporters", "", "")</li>
+
+    </ul>
+</div>
+<p>User rights management </p>

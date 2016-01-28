@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Views";
+}
+<div class="breadcrumb">
+    You are here: 
+
+        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+        <li>@Html.ActionLink("Views", "Views", "Home")</li>
+    
+</div>
+<h2>Views</h2>
+<div class="col-md-3">
+    <ul class="nav navbar-nav">
+        <li>@Html.ActionLink("View available view options", "", "")</li>
+        <li>@Html.ActionLink("Add New view option", "", "")</li>
+        <li>@Html.ActionLink("View a system", "", "")</li>
+    </ul>
+</div>
+
+<p>View content </p>
